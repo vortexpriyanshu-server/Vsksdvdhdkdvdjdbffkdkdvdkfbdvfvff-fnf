@@ -15,7 +15,7 @@ ADMIN_PASSWORD=os.getenv('ADMIN_PASSWORD','CHANGE_ME')
 SECRET_KEY=os.getenv('SECRET_KEY',secrets.token_urlsafe(32))
 DATA=Path('data.json')
 app=FastAPI(title=APP_NAME)
-app.add_middleware(SessionMiddleware,secret_key=SECRET_KEY,http_only=True,same_site='lax')
+app.add_middleware(SessionMiddleware,secret_key=SECRET_KEY,same_site='lax')
 
 def load():
     import json
