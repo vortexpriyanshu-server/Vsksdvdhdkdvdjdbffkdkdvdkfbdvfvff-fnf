@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+replicate
+httpx
+python-multipart
