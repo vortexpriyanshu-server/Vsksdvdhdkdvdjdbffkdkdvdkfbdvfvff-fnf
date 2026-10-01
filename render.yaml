@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: icmr-hitek-search
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_SESSION_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: ICMR_INDEX_SOURCE
+        value: "remote"
+      - key: ICMR_PARALLEL
+        value: "2"
+      - key: ICMR_THREADS_PER_CONN
+        value: "2"
