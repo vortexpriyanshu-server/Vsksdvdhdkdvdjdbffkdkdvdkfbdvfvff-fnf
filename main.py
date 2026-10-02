@@ -579,7 +579,7 @@ function applyDayMode(on){
   if(b){
     b.setAttribute('aria-pressed',on?'true':'false');
     b.title=on?'Switch to Night Mode':'Switch to Day Mode';
-    b.querySelector('.toggle-label').textContent=on?'DAY':'NIGHT';
+    b.querySelector('.toggle-label').textContent=on?'':'';
     b.querySelector('.toggle-track-icon i').className=on?'fa-solid fa-sun':'fa-solid fa-moon';
     b.querySelector('.toggle-knob i').className=on?'fa-solid fa-sun':'fa-solid fa-moon';
   }
